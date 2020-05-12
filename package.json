@@ -5,13 +5,14 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "nodemon ./server/app.js"
+		"start": "cd ../client && npm i && yarn build && cd ../server && npm i && node app.js",
+		"start:dev": "nodemon ./server/app.js"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/DCCA/ecommerce.git"
 	},
-	"author": "DCCA & Eric Favali",
+	"author": "DCCA & Eric Favalli",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/DCCA/ecommerce/issues"
