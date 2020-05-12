@@ -1,0 +1,23 @@
+{
+	"name": "ecommerce",
+	"version": "1.0.0",
+	"description": "Ecommerce example with VUE and NodeJS",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon app.js"
+	},
+	"author": "DCCA & Eric Favali",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"express": "^4.17.1",
+		"helmet": "^3.22.0",
+		"mongodb": "^3.5.7",
+		"mongoose": "^5.9.13",
+		"multer": "^1.4.2"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.3"
+	}
+}
