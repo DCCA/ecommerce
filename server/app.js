@@ -13,11 +13,11 @@ const app = express();
 app.use(bodyParser.json());
 
 // Static serving
-app.use(express.static(path.join(__dirname, 'client', 'dist')));
+app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
 
 // Routes
 app.use('*', (req, res, next) => {
-	res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+	res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'));
 });
 
 // Start server
