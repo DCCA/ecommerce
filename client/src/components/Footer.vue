@@ -7,7 +7,7 @@
 				<li><i class="fab fa-instagram"></i></li>
 				<li><i class="fab fa-youtube"></i></li>
 			</ul>
-			<div class="footer__acordions">
+			<div class="footer__acordions-container">
 				<!-- <div></div> -->
 				<app-acordion-menu
 					title="categorias"
@@ -24,7 +24,13 @@
 			</div>
 			<div class="footer__info-containers">
 				<h3 class="footer-titles">Formas de Pagamento</h3>
-				<p>Bandeiras</p>
+				<div class="footer__card-flags-container">
+					<img src="../assets/visa.svg" alt="visa" />
+					<img src="../assets/diners-club.svg" alt="diners" />
+					<img src="../assets/amex.svg" alt="amex" />
+					<img src="../assets/discover.svg" alt="discover" />
+					<img src="../assets/mastercard.svg" alt="mastercard" />
+				</div>
 			</div>
 			<div class="footer__info-containers">
 				<h3 class="footer-titles">Seguranca</h3>
@@ -82,33 +88,8 @@ footer {
 	color: #8c8c8c;
 }
 
-.acordion-list-links {
-	display: none;
-	flex-direction: column;
-	text-align: left;
-	padding-bottom: 1rem;
-	li {
-		padding-bottom: 0.5rem;
-		font-size: 0.6rem;
-		text-transform: uppercase;
-	}
-}
-
-.acordions-title-container {
-	display: flex;
-	justify-content: space-between;
-	padding-bottom: 0.8rem;
-	margin-bottom: 0.8rem;
-	border-bottom: solid 1px #4f4f4f;
-	h3 {
-		text-transform: uppercase;
-		text-align: left;
-		font-size: 0.8rem;
-	}
-}
-
-.active {
-	display: flex;
+.footer__acordions-container {
+	margin-bottom: 2.5rem;
 }
 
 .footer-titles {
@@ -116,6 +97,13 @@ footer {
 	text-align: left;
 	font-size: 0.8rem;
 	padding-bottom: 1rem;
+}
+
+.footer__card-flags-container {
+	display: flex;
+	img {
+		padding-right: 1rem;
+	}
 }
 
 .footer__info-containers {

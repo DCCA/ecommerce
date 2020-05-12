@@ -45,12 +45,15 @@ export default {
 
 <style lang="scss" scoped>
 header {
+	position: absolute;
 	width: 100%;
 	grid-column: 1 / 4;
 	display: grid;
 	align-items: center;
 	grid-template-columns: repeat(3, 1fr);
-	background-color: grey;
+	opacity: 1;
+	// background-color: grey;
+	background-color: transparent;
 	padding: 1rem 0;
 	h2 {
 		font-size: 1.4rem;
@@ -75,7 +78,7 @@ a {
 	position: absolute;
 	top: 3.5rem;
 	display: none;
-	background-color: grey;
+	// background-color: grey;
 	width: 100%;
 	margin: 0;
 	padding: 1rem 0;
