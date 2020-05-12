@@ -45,8 +45,4 @@ export default {};
 	background-color: transparent;
 	padding: 1rem 3rem;
 }
-
-.bold {
-	font-weight: bold;
-}
 </style>

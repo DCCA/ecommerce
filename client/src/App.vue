@@ -31,6 +31,7 @@ $font-logo: 'Exo 2', sans-serif;
 $font-size: 16px;
 $desktop-width: 1220px;
 $card-width: 100%;
+$min-width: 265px;
 
 // Basic functions
 @mixin desktop {
@@ -45,7 +46,14 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+h2 {
+	font-size: 1.6rem;
+	color: #222222;
+}
+
 #app {
+	min-width: $min-width;
+	position: relative;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
@@ -60,5 +68,9 @@ body {
 
 li {
 	list-style: none;
+}
+
+.bold {
+	font-weight: bold;
 }
 </style>
