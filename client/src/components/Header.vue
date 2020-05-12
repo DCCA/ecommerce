@@ -51,6 +51,10 @@ header {
 	align-items: center;
 	grid-template-columns: repeat(3, 1fr);
 	background-color: grey;
+	padding: 1rem 0;
+	h2 {
+		font-size: 1.4rem;
+	}
 }
 
 a {
@@ -69,7 +73,7 @@ a {
 .header__topnav {
 	flex-direction: column;
 	position: absolute;
-	top: 4rem;
+	top: 3.5rem;
 	display: none;
 	background-color: grey;
 	width: 100%;
