@@ -25,7 +25,7 @@ app.use('*', (req, res, next) => {
 	res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'));
 });
 
-// Conect to DB
+// Connect to DB
 mongoose
 	.connect(
 		`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@node-complete-bftj6.gcp.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`,
