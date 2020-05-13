@@ -4,8 +4,9 @@
 	"description": "This is a experimental project to try the MEVN stack",
 	"main": "index.js",
 	"scripts": {
+		"build:client": "cd ./client && yarn build",
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "cd ./client && npm i && npm run build && cd ../server && npm i && node app.js",
+		"start": "cd ../server && npm i && node app.js",
 		"start:dev": "nodemon ./server/app.js"
 	},
 	"repository": {
