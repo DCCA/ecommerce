@@ -27,8 +27,8 @@
 				src="../assets/search.svg"
 				alt="search"
 			/>
-			<router-link to="/">Buscar</router-link>
-			<router-link to="/admin">Entrar</router-link>
+			<router-link to="/" class="desktop-links">Buscar</router-link>
+			<router-link to="/admin" class="desktop-links">Entrar</router-link>
 			<img
 				class="header__bicicle-icon"
 				src="../assets/bicicle-icon.svg"
@@ -186,6 +186,13 @@ a {
 		img {
 			height: 2rem;
 		}
+	}
+}
+
+.desktop-links {
+	display: none;
+	@include desktop {
+		display: block;
 	}
 }
 
