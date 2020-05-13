@@ -1,27 +1,30 @@
 <template>
-  <div class="destaques__container">
+  <div class="blog__container">
     <h2>
-      ultimos
-      <span class="bold">detaques</span>
+      blog
+      <span class="bold">saiba mais</span>
     </h2>
-    <div class="destaques__carouse-container">
+    <div class="blog__carousel-container">
       <carousel :paginationEnabled="paginationEnabled" perPage="1">
-        <slide v-for="(card, index) in cards" :key="index">
-          <app-destaques-card
-            :title="card.title"
-            :publishDate="card.publishDate"
-            :price="card.price"
-          ></app-destaques-card>
+        <slide>
+          <div class="blog-card__container">
+            <div
+              class="blog-card__image"
+              v-bind:style="{ backgroundImage: 'url(' + 'https://keywordimg.com/640x480/celebrate' + ')' }"
+            ></div>
+            <div class="blog-card__details">
+              <h3>Title</h3>
+              <a href>+ ler materia completa</a>
+            </div>
+          </div>
         </slide>
       </carousel>
     </div>
-    <button class="btn-line">Ver Mais</button>
   </div>
 </template>
 
 <script>
 import { Carousel, Slide } from "vue-carousel";
-import DestaquesCard from "../Home/DestaquesCard.vue";
 
 export default {
   data() {
@@ -38,18 +41,17 @@ export default {
   },
   components: {
     Carousel,
-    Slide,
-    appDestaquesCard: DestaquesCard
+    Slide
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.destaques__container {
+.blog__container {
   padding: 2rem 0;
 }
 
-.destaques__carouse-container {
+.blog__carousel-container {
   padding: 1rem;
   position: relative;
 }
@@ -57,40 +59,36 @@ export default {
 h2 {
   text-transform: uppercase;
   font-style: italic;
+  padding-bottom: 1rem;
 }
 
-.card {
+.blog-card__container {
+}
+
+.blog-card__image {
   border-radius: 5px;
-  box-shadow: 0 1px 18px 0 rgba(0, 0, 0, 0.07);
-  margin: 1rem;
+  height: 13rem;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
 }
 
-.card__details {
-  text-align: left;
+.blog-card__details {
   padding: 1rem;
+  text-align: left;
   h3 {
-    font-size: 1rem;
-    color: #414150;
-  }
-  p {
-    font-size: 0.7rem;
-  }
-  h3,
-  p {
-    padding-bottom: 0.6rem;
-  }
-  h3,
-  .price {
-    font-weight: bold;
-  }
-  .price {
     font-size: 1.5rem;
-    color: #929aa3;
+    color: #414150;
+    font-weight: bold;
+    padding: 1rem 0 0.8rem;
   }
-}
-
-.btn-line {
-  border: solid 1px #e6162d;
-  color: #e6162d;
+  a {
+    text-transform: uppercase;
+    color: #e6162d;
+    letter-spacing: 1.3px;
+    &:link {
+      text-decoration: none;
+    }
+  }
 }
 </style>
