@@ -50,10 +50,20 @@ export default {
         password: this.password
       };
       console.log(formData);
-      this.$store.dispatch("login", {
-        email: formData.email,
-        password: formData.password
-      });
+      this.$store
+        .dispatch("login", {
+          email: formData.email,
+          password: formData.password
+        })
+        .then(res => {
+          console.log(res);
+        })
+        .then(() => {
+          this.$router.push({ name: "MyArea" });
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 };

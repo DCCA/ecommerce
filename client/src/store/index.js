@@ -13,6 +13,10 @@ export default new Vuex.Store({
 			state.idToken = userData.token;
 			state.userId = userData.userId;
 		},
+		logOutUser(state) {
+			state.idToken = null;
+			state.userId = null;
+		},
 	},
 	actions: {
 		signup(context, authData) {
@@ -65,6 +69,9 @@ export default new Vuex.Store({
 				.catch((err) => {
 					console.log(err);
 				});
+		},
+		logout(context) {
+			context.commit('logOutUser');
 		},
 	},
 	modules: {},
