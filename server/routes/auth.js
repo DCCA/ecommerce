@@ -3,6 +3,8 @@ const router = express.Router();
 const { body } = require('express-validator');
 // Controller
 const authController = require('../controller/auth');
+// Models
+const User = require('../model/user');
 // Signup
 router.put(
 	'/signup',
@@ -21,9 +23,7 @@ router.put(
 		body('password')
 			.trim()
 			.isLength({ min: 5 }),
-		body('name')
-			.trim()
-			.isEmpty(),
+		body('name').trim(),
 	],
 	authController.putSignup
 );

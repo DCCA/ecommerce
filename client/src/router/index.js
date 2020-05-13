@@ -2,8 +2,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Admin from '../views/Admin.vue';
-import Login from '../components/Login.vue';
-import SignUp from '../components/Signup.vue';
+import Login from '../components/Admin/Login.vue';
+import SignUp from '../components/Admin/Signup.vue';
 
 Vue.use(VueRouter);
 
@@ -18,7 +18,7 @@ const routes = [
 		name: 'Admin',
 		component: Admin,
 		children: [
-			{ path: 'login', component: Login, name: 'Login' },
+			{ path: '', component: Login, name: 'Login' },
 			{ path: 'sign-up', component: SignUp, name: 'Signup' },
 		],
 	},

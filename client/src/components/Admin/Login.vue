@@ -1,16 +1,7 @@
 <template>
   <div>
-    <h1>Sign Up</h1>
+    <h1>Login</h1>
     <form class="pa4 black-80">
-      <div class="measure">
-        <label for="name" class="f6 b db mb2">Name</label>
-        <input
-          id="name"
-          class="input-reset ba b--black-20 pa2 mb2 db w-100"
-          type="text"
-          aria-describedby="name-desc"
-        />
-      </div>
       <div class="measure">
         <label for="email" class="f6 b db mb2">E-mail</label>
         <input
@@ -18,6 +9,7 @@
           class="input-reset ba b--black-20 pa2 mb2 db w-100"
           type="text"
           aria-describedby="email-desc"
+          v-model="email"
         />
       </div>
       <div class="measure">
@@ -27,14 +19,15 @@
           class="input-reset ba b--black-20 pa2 mb2 db w-100"
           type="password"
           aria-describedby="password-desc"
+          v-model="password"
         />
       </div>
       <div class>
         <input
           class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
           type="submit"
-          value="Sign up"
-          @click.prevent="submitted"
+          value="Log in"
+          @click.prevent="logIn"
         />
       </div>
     </form>
@@ -43,9 +36,24 @@
 
 <script>
 export default {
+  data() {
+    return {
+      email: "",
+      password: ""
+    };
+  },
   methods: {
-    submitted() {
-      console.log("Clicked");
+    logIn() {
+      console.log("Log in");
+      const formData = {
+        email: this.email,
+        password: this.password
+      };
+      console.log(formData);
+      this.$store.dispatch("login", {
+        email: formData.email,
+        password: formData.password
+      });
     }
   }
 };

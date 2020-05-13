@@ -5,26 +5,41 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const mongoose = require('mongoose');
 const path = require('path');
-
 // Import routes
 const authRoutes = require('./routes/auth');
-
 // Create app
 const app = express();
-
 // Config app
 app.use(bodyParser.json());
 app.use(helmet());
-
 // Static serving
 app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
-
+// CORS Config
+app.use((req, res, next) => {
+	// Set domains
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	// Set the methods
+	res.setHeader(
+		'Access-Control-Allow-Methods',
+		'GET, POST, PUT, PATCH, DELETE'
+	);
+	//
+	res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+	next();
+});
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('*', (req, res, next) => {
 	res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'));
 });
-
+// Error handling route
+app.use((error, req, res, next) => {
+	console.log(error);
+	const status = error.statusCode || 500;
+	const message = error.message;
+	const data = error.data;
+	res.status(status).json({ message: message, data: data });
+});
 // Connect to DB
 mongoose
 	.connect(
