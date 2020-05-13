@@ -1,139 +1,138 @@
 <template>
-	<footer>
-		<div class="footer__content-container">
-			<ul class="footer__social-list">
-				<li><i class="fab fa-facebook-square"></i></li>
-				<li><i class="fab fa-twitter"></i></li>
-				<li><i class="fab fa-instagram"></i></li>
-				<li><i class="fab fa-youtube"></i></li>
-			</ul>
-			<div class="footer__acordions-container">
-				<!-- <div></div> -->
-				<app-acordion-menu
-					title="categorias"
-					:listItem="categoriasLinks"
-				></app-acordion-menu>
-				<app-acordion-menu
-					title="minha Conta"
-					:listItem="minhaAreaLinks"
-				></app-acordion-menu>
-				<app-acordion-menu
-					title="institucional"
-					:listItem="institucionalLinks"
-				></app-acordion-menu>
-			</div>
-			<div class="footer__info-containers">
-				<h3 class="footer-titles">Formas de Pagamento</h3>
-				<div class="footer__card-flags-container">
-					<img src="../assets/visa.svg" alt="visa" />
-					<img src="../assets/diners-club.svg" alt="diners" />
-					<img src="../assets/amex.svg" alt="amex" />
-					<img src="../assets/discover.svg" alt="discover" />
-					<img src="../assets/mastercard.svg" alt="mastercard" />
-				</div>
-			</div>
-			<div class="footer__info-containers">
-				<h3 class="footer-titles">Seguranca</h3>
-				<img class="footer-icons" src="../assets/ebit.png" alt="ebit" />
-			</div>
-		</div>
-		<div class="footer__copyright-container">
-			<p>Orbital 2018 - Todos os direitos reservados.</p>
-		</div>
-	</footer>
+  <footer>
+    <div class="footer__content-container">
+      <ul class="footer__social-list">
+        <li>
+          <i class="fab fa-facebook-square"></i>
+        </li>
+        <li>
+          <i class="fab fa-twitter"></i>
+        </li>
+        <li>
+          <i class="fab fa-instagram"></i>
+        </li>
+        <li>
+          <i class="fab fa-youtube"></i>
+        </li>
+      </ul>
+      <div class="footer__acordions-container">
+        <!-- <div></div> -->
+        <app-acordion-menu title="categorias" :listItem="categoriasLinks"></app-acordion-menu>
+        <app-acordion-menu title="minha Conta" :listItem="minhaAreaLinks"></app-acordion-menu>
+        <app-acordion-menu title="institucional" :listItem="institucionalLinks"></app-acordion-menu>
+      </div>
+      <div class="footer__info-containers">
+        <h3 class="footer-titles">Formas de Pagamento</h3>
+        <div class="footer__card-flags-container">
+          <img src="../assets/visa.svg" alt="visa" />
+          <img src="../assets/diners-club.svg" alt="diners" />
+          <img src="../assets/amex.svg" alt="amex" />
+          <img src="../assets/discover.svg" alt="discover" />
+          <img src="../assets/mastercard.svg" alt="mastercard" />
+        </div>
+      </div>
+      <div class="footer__info-containers">
+        <h3 class="footer-titles">Seguranca</h3>
+        <img class="footer-icons" src="../assets/ebit.png" alt="ebit" />
+      </div>
+    </div>
+    <div class="footer__copyright-container">
+      <p>Orbital | 2018 - Todos os direitos reservados.</p>
+    </div>
+  </footer>
 </template>
 
 <script>
-import AcordionMenu from './AcordionMenu.vue';
+import AcordionMenu from "./AcordionMenu.vue";
 
 export default {
-	data() {
-		return {
-			isActive: false,
-			categoriasLinks: [
-				{ linkName: 'Capacetes' },
-				{ linkName: 'Freios' },
-				{ linkName: 'Rodas' },
-				{ linkName: 'Pedais' },
-				{ linkName: 'Sapatilhas' },
-				{ linkName: 'Acessorios' },
-			],
-			minhaAreaLinks: [
-				{ linkName: 'Meus Pedidos' },
-				{ linkName: 'Minha Area' },
-			],
-			institucionalLinks: [
-				{ linkName: 'Quem Somos' },
-				{ linkName: 'Duvidas' },
-				{ linkName: 'Termos' },
-				{ linkName: 'Politica de Privacidade' },
-			],
-		};
-	},
-	methods: {
-		toggle() {
-			this.isActive = !this.isActive;
-		},
-	},
-	components: {
-		appAcordionMenu: AcordionMenu,
-	},
+  data() {
+    return {
+      isActive: false,
+      categoriasLinks: [
+        { linkName: "Capacetes" },
+        { linkName: "Freios" },
+        { linkName: "Rodas" },
+        { linkName: "Pedais" },
+        { linkName: "Sapatilhas" },
+        { linkName: "Acessorios" }
+      ],
+      minhaAreaLinks: [
+        { linkName: "Meus Pedidos" },
+        { linkName: "Minha Area" }
+      ],
+      institucionalLinks: [
+        { linkName: "Quem Somos" },
+        { linkName: "Duvidas" },
+        { linkName: "Termos" },
+        { linkName: "Politica de Privacidade" }
+      ]
+    };
+  },
+  methods: {
+    toggle() {
+      this.isActive = !this.isActive;
+    }
+  },
+  components: {
+    appAcordionMenu: AcordionMenu
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 footer {
-	grid-column: 1 / 4;
-	background-color: #222;
-	color: #8c8c8c;
+  grid-column: 1 / 4;
+  background-color: #222;
+  color: #8c8c8c;
 }
 
 .footer__acordions-container {
-	margin-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .footer-titles {
-	text-transform: uppercase;
-	text-align: left;
-	font-size: 0.8rem;
-	padding-bottom: 1rem;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 0.8rem;
+  padding-bottom: 1rem;
 }
 
 .footer__card-flags-container {
-	display: flex;
-	img {
-		padding-right: 1rem;
-	}
+  display: flex;
+  img {
+    padding-right: 1rem;
+  }
 }
 
 .footer__info-containers {
-	display: flex;
-	flex-direction: column;
-	padding-bottom: 2rem;
-	.footer-icons {
-		width: 4rem;
-	}
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  .footer-icons {
+    width: 4rem;
+  }
 }
 
 .footer__content-container {
-	padding: 1.4rem 1.5rem 0;
+  padding: 1.4rem 1.5rem 0;
 }
 .footer__social-list {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding-bottom: 2rem;
-	li {
-		padding: 0 1rem;
-	}
-	i {
-		font-size: 1.2rem;
-		color: #fff;
-	}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+  li {
+    padding: 0 1rem;
+  }
+  i {
+    font-size: 1.2rem;
+    color: #fff;
+  }
 }
 
 .footer__copyright-container {
-	padding: 1rem;
-	border-top: solid 1px #393939;
+  padding: 1rem;
+  border-top: solid 1px #393939;
 }
 </style>

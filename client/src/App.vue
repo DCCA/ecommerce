@@ -82,6 +82,6 @@ li {
   text-transform: uppercase;
   font-stretch: condensed;
   background-color: transparent;
-  padding: 1rem 3rem;
+  padding: 1rem 6rem;
 }
 </style>
