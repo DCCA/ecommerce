@@ -14,14 +14,6 @@
 					></app-destaques-card>
 				</slide>
 			</carousel>
-			<vueper-slides
-				class="no-shadow bg-light-silver"
-				:visible-slides="1.5"
-				:slide-ratio="1 / 4"
-				:dragging-distance="70"
-			>
-				<vueper-slide v-for="i in 9" :key="i" :title="i.toString()" />
-			</vueper-slides>
 		</div>
 		<button class="btn-line">Ver Mais</button>
 	</div>
@@ -30,8 +22,6 @@
 <script>
 import { Carousel, Slide } from 'vue-carousel';
 import DestaquesCard from '../Home/DestaquesCard.vue';
-import { VueperSlides, VueperSlide } from 'vueperslides';
-import 'vueperslides/dist/vueperslides.css';
 
 export default {
 	data() {
@@ -47,8 +37,6 @@ export default {
 		};
 	},
 	components: {
-		VueperSlides,
-		VueperSlide,
 		Carousel,
 		Slide,
 		appDestaquesCard: DestaquesCard,
@@ -74,5 +62,10 @@ h2 {
 .btn-line {
 	border: solid 1px #e6162d;
 	color: #e6162d;
+}
+
+.border {
+	border: solid 2px black;
+	// margin: 1rem;
 }
 </style>
