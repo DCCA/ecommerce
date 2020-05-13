@@ -28,7 +28,7 @@ app.use('*', (req, res, next) => {
 // Conect to DB
 mongoose
 	.connect(
-		'mongodb+srv://root:12Guitar@node-complete-bftj6.gcp.mongodb.net/ecommerce?retryWrites=true&w=majority',
+		`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@node-complete-bftj6.gcp.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`,
 		{ useNewUrlParser: true, useUnifiedTopology: true }
 	)
 	.then((result) => {
