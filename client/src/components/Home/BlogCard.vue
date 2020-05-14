@@ -6,6 +6,9 @@
     ></div>
     <div class="blog-card__details">
       <h3>{{blogCardData.title}}</h3>
+      <p
+        class="details"
+      >Bacon ipsum dolor amet meatball filet mignon boudin corned beef chislic venison. Pork loin short loin shankle sirloin frankfurter jowl bresaola.</p>
       <a :href="blogCardData.imageUrl">+ ler materia completa</a>
     </div>
   </div>
@@ -50,6 +53,13 @@ export default {
     letter-spacing: 1.3px;
     &:link {
       text-decoration: none;
+    }
+  }
+  .details {
+    display: none;
+    @include desktop {
+      display: block;
+      padding-bottom: 1rem;
     }
   }
 }

@@ -26,3 +26,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.home {
+  z-index: 1;
+}
+</style>

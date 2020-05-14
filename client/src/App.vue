@@ -38,7 +38,7 @@ h2 {
 }
 
 #app {
-  min-width: $min-width;
+  //   min-width: $min-width;
   position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

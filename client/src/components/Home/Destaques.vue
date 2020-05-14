@@ -8,7 +8,7 @@
       <router-link to="/" class="destaques__ver-mais-desktop">ver mais</router-link>
     </div>
     <div class="destaques__carousel-container">
-      <carousel :paginationEnabled="paginationEnabled" perPage="1">
+      <carousel :paginationEnabled="paginationEnabled" :perPage="1">
         <slide v-for="(card, index) in cards" :key="index">
           <app-destaques-card
             :title="card.title"
