@@ -10,3 +10,13 @@ $min-width: 265px;
 		@content;
 	}
 }
+
+// Components
+.link-see-more {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #e6162d;
+	letter-spacing: 1.3px;
+	font-size: 1rem;
+	text-align: left;
+}
