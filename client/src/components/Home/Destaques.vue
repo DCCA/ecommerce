@@ -2,9 +2,12 @@
 	<div class="destaques__container">
 		<h2>
 			ultimos
-			<span class="bold">detaques</span>
+			<span class="bold">destaques</span>
 		</h2>
-		<div class="destaques__carouse-container">
+		<router-link to="/" class="destaques__ver-mais-desktop"
+			>ver mais</router-link
+		>
+		<div class="destaques__carousel-container">
 			<carousel :paginationEnabled="paginationEnabled" perPage="1">
 				<slide v-for="(card, index) in cards" :key="index">
 					<app-destaques-card
@@ -47,21 +50,55 @@ export default {
 <style lang="scss" scoped>
 .destaques__container {
 	padding: 2rem 0;
+	@include desktop {
+		display: grid;
+		grid-template-columns: 20% 70% 10%;
+		grid-template-rows: 1fr 1fr;
+	}
 }
 
-.destaques__carouse-container {
+.destaques__ver-mais-desktop {
+	grid-column: 1 / 2;
+	grid-row: 2 / 3;
+	align-self: end;
+	justify-self: end;
+	padding-bottom: 1rem;
+	text-transform: uppercase;
+	color: #e6162d;
+	font-weight: bold;
+	border-bottom: 1px solid #e6162d;
+	margin-bottom: 2rem;
+	&:link {
+		text-decoration: none;
+	}
+}
+
+.destaques__carousel-container {
 	padding: 1rem;
 	position: relative;
+	@include desktop {
+		grid-row: 1 /3;
+	}
 }
 
 h2 {
 	text-transform: uppercase;
 	font-style: italic;
+	font-weight: normal;
+	@include desktop {
+		width: 90%;
+		text-align: right;
+		justify-self: flex-end;
+		padding: 2rem 0;
+	}
 }
 
 .btn-line {
 	border: solid 1px #e6162d;
 	color: #e6162d;
+	@include desktop {
+		display: none;
+	}
 }
 
 .border {

@@ -132,7 +132,7 @@ a {
 		align-items: center;
 		a {
 			color: white;
-			font-size: 1.4rem;
+			// font-size: 1.4rem;
 			font-weight: bold;
 			text-transform: uppercase;
 			&:link {
@@ -155,7 +155,7 @@ a {
 	color: white;
 	@include desktop {
 		grid-column: 1 / 3;
-		font-size: 2.6rem;
+		font-size: 1.6rem;
 	}
 }
 
@@ -179,12 +179,12 @@ a {
 			color: white;
 			&:link {
 				text-decoration: none;
-				font-size: 1.4rem;
+				font-size: 1rem;
 				font-weight: normal;
 			}
 		}
 		img {
-			height: 2rem;
+			height: 1.4rem;
 		}
 	}
 }

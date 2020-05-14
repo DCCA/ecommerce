@@ -39,17 +39,13 @@ export default {};
 		line-height: 2.5rem;
 		font-size: 2rem;
 		letter-spacing: 0.8rem;
-		@include desktop {
-			font-size: 3rem;
-			line-height: 3.5rem;
-		}
 	}
 	span {
 		letter-spacing: 0.2rem;
 		@include desktop {
-			font-size: 6rem;
-			line-height: 6.5rem;
-			letter-spacing: 0.6rem;
+			font-size: 3rem;
+			line-height: 5rem;
+			letter-spacing: 0.3rem;
 		}
 	}
 }

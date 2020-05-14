@@ -33,9 +33,6 @@ body {
 
 h2 {
 	font-size: 1.6rem;
-	@include desktop {
-		font-size: 2.5rem;
-	}
 	color: #222222;
 	letter-spacing: 3px;
 }
@@ -78,10 +75,10 @@ li {
 	font-stretch: condensed;
 	background-color: transparent;
 	padding: 1rem 6rem;
-	@include desktop {
-		font-size: 2rem;
-		padding: 2rem 4rem;
-		border-radius: 10rem;
-	}
+	// @include desktop {
+	// 	font-size: 2rem;
+	// 	padding: 2rem 4rem;
+	// 	border-radius: 10rem;
+	// }
 }
 </style>
