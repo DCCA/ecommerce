@@ -19,8 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-// Imports
-@import url("'https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto&display=swap');");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css");
 
@@ -37,7 +36,6 @@ h2 {
 }
 
 #app {
-  //   min-width: $min-width;
   position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

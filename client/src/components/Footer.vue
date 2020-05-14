@@ -18,7 +18,7 @@
       <app-acordion-menu title="categorias" :listItem="categoriasLinks"></app-acordion-menu>
       <app-acordion-menu title="minha Conta" :listItem="minhaAreaLinks"></app-acordion-menu>
       <app-acordion-menu title="institucional" :listItem="institucionalLinks"></app-acordion-menu>
-      <div class="footer__info-containers">
+      <div class="footer__info-containers formas-de-pagamento__container">
         <h3 class="footer-titles">Formas de Pagamento</h3>
         <div class="footer__card-flags-container">
           <img src="../assets/visa.svg" alt="visa" />
@@ -35,7 +35,7 @@
     </div>
     <div class="footer__copyright-container">
       <p>Orbital | 2018 - Todos os direitos reservados.</p>
-      <ul class="footer__social-list">
+      <ul class="footer__social-list desktop">
         <li>
           <i class="fab fa-facebook-square"></i>
         </li>
@@ -102,6 +102,13 @@ footer {
   }
   h3 {
     letter-spacing: 0.2rem;
+  }
+}
+
+.formas-de-pagamento__container {
+  padding-top: 1rem;
+  @include desktop {
+    padding-top: 0;
   }
 }
 
@@ -179,6 +186,13 @@ footer {
 .mobile {
   @include desktop {
     display: none;
+  }
+}
+
+.desktop {
+  display: none;
+  @include desktop {
+    display: flex;
   }
 }
 </style>
