@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card__image-container">
-      <img class="card__images" src="https://keywordimg.com/260x260/random" alt />
+      <img class="card__images" :src="imageUrl" alt />
     </div>
     <div class="card__details">
       <h3 class="title">{{ title }}</h3>
@@ -34,6 +34,10 @@ export default {
       required: true
     },
     price: {
+      type: String,
+      required: true
+    },
+    imageUrl: {
       type: String,
       required: true
     }

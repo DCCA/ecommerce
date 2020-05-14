@@ -29,6 +29,9 @@ export default {
 .categoria-card {
   padding: 1rem;
   background-color: #222;
+  @include desktop {
+    border: solid 1px #3d3d3d;
+  }
 }
 
 .categoria-card__title {

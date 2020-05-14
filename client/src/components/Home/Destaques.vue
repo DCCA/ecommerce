@@ -14,6 +14,7 @@
             :title="card.title"
             :publishDate="card.publishDate"
             :price="card.price"
+            :imageUrl="card.imageUrl"
           ></app-destaques-card>
         </slide>
       </carousel>
@@ -34,12 +35,33 @@ export default {
         {
           title: "Title Title Title Title Title Title",
           publishDate: "20/20/2020",
-          price: "32.900"
+          price: "32.900",
+          imageUrl: "https://keywordimg.com/400x260/car"
         },
-        { title: "Title", publishDate: "20/20/2020", price: "32.900" },
-        { title: "Title", publishDate: "20/20/2020", price: "32.900" },
-        { title: "Title", publishDate: "20/20/2020", price: "32.900" },
-        { title: "Title", publishDate: "20/20/2020", price: "32.900" }
+        {
+          title: "Title",
+          publishDate: "20/20/2020",
+          price: "32.900",
+          imageUrl: "https://keywordimg.com/400x260/nicecar"
+        },
+        {
+          title: "Title",
+          publishDate: "20/20/2020",
+          price: "32.900",
+          imageUrl: "https://keywordimg.com/400x260/bigcar"
+        },
+        {
+          title: "Title",
+          publishDate: "20/20/2020",
+          price: "32.900",
+          imageUrl: "https://keywordimg.com/400x260/ok"
+        },
+        {
+          title: "Title",
+          publishDate: "20/20/2020",
+          price: "32.900",
+          imageUrl: "https://keywordimg.com/400x260/funnything"
+        }
       ]
     };
   },
