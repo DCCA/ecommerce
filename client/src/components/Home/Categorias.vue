@@ -11,28 +11,38 @@
         :cardData="card"
       ></app-categorias-card>
     </div>
+    <div class="categorias__carousel">
+      <carousel :paginationEnabled="false" :perPage="5">
+        <slide v-for="(card, index) in categoriasCardList" :key="index">
+          <app-categorias-card :key="index" :cardData="card"></app-categorias-card>
+        </slide>
+      </carousel>
+    </div>
     <button class="btn-line">Ver Mais</button>
   </div>
 </template>
 
 <script>
+import { Carousel, Slide } from "vue-carousel";
 import CategoriasCard from "./CategoriasCard";
 
 export default {
   data() {
     return {
       categoriasCardList: [
-        { title: "Title", imgUrl: "https://keywordimg.com/48x48/random" },
-        { title: "Title", imgUrl: "https://keywordimg.com/48x48/random" },
-        { title: "Title", imgUrl: "https://keywordimg.com/48x48/random" },
-        { title: "Title", imgUrl: "https://keywordimg.com/48x48/random" },
-        { title: "Title", imgUrl: "https://keywordimg.com/48x48/random" },
-        { title: "Title", imgUrl: "https://keywordimg.com/48x48/random" }
+        { title: "Title", imgUrl: "https://keywordimg.com/100x100/sky" },
+        { title: "Title", imgUrl: "https://keywordimg.com/100x100/bicicle" },
+        { title: "Title", imgUrl: "https://keywordimg.com/100x100/building" },
+        { title: "Title", imgUrl: "https://keywordimg.com/100x100/funny" },
+        { title: "Title", imgUrl: "https://keywordimg.com/100x100/ok" },
+        { title: "Title", imgUrl: "https://keywordimg.com/100x100/try" }
       ]
     };
   },
   components: {
-    appCategoriasCard: CategoriasCard
+    appCategoriasCard: CategoriasCard,
+    Carousel,
+    Slide
   }
 };
 </script>
@@ -60,16 +70,16 @@ h2 {
   background-color: #3d3d3d;
   gap: 1px;
   margin: 2rem 0;
+  @include desktop {
+    display: none;
+  }
 }
 
-.categoria-card {
-  padding: 1rem;
-  background-color: #222;
-}
-
-.categoria-card__title {
-  color: #fff;
-  font-size: 1rem;
-  padding-top: 0.5rem;
+.categorias__carousel {
+  display: none;
+  @include desktop {
+    display: block;
+    margin: 5rem 0;
+  }
 }
 </style>

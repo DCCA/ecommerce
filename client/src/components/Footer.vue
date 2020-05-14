@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="footer__content-container">
-      <ul class="footer__social-list">
+      <ul class="footer__social-list mobile">
         <li>
           <i class="fab fa-facebook-square"></i>
         </li>
@@ -15,13 +15,10 @@
           <i class="fab fa-youtube"></i>
         </li>
       </ul>
-      <div class="footer__acordions-container">
-        <!-- <div></div> -->
-        <app-acordion-menu title="categorias" :listItem="categoriasLinks"></app-acordion-menu>
-        <app-acordion-menu title="minha Conta" :listItem="minhaAreaLinks"></app-acordion-menu>
-        <app-acordion-menu title="institucional" :listItem="institucionalLinks"></app-acordion-menu>
-      </div>
-      <div class="footer__info-containers">
+      <app-acordion-menu title="categorias" :listItem="categoriasLinks"></app-acordion-menu>
+      <app-acordion-menu title="minha Conta" :listItem="minhaAreaLinks"></app-acordion-menu>
+      <app-acordion-menu title="institucional" :listItem="institucionalLinks"></app-acordion-menu>
+      <div class="footer__info-containers formas-de-pagamento__container">
         <h3 class="footer-titles">Formas de Pagamento</h3>
         <div class="footer__card-flags-container">
           <img src="../assets/visa.svg" alt="visa" />
@@ -38,6 +35,20 @@
     </div>
     <div class="footer__copyright-container">
       <p>Orbital | 2018 - Todos os direitos reservados.</p>
+      <ul class="footer__social-list desktop">
+        <li>
+          <i class="fab fa-facebook-square"></i>
+        </li>
+        <li>
+          <i class="fab fa-twitter"></i>
+        </li>
+        <li>
+          <i class="fab fa-instagram"></i>
+        </li>
+        <li>
+          <i class="fab fa-youtube"></i>
+        </li>
+      </ul>
     </div>
   </footer>
 </template>
@@ -85,10 +96,26 @@ footer {
   grid-column: 1 / 4;
   background-color: #222;
   color: #8c8c8c;
+  @include desktop {
+    grid-column: 1 / 13;
+    padding-top: 5rem;
+  }
+  h3 {
+    letter-spacing: 0.2rem;
+  }
 }
 
-.footer__acordions-container {
-  margin-bottom: 2.5rem;
+.formas-de-pagamento__container {
+  padding-top: 1rem;
+  @include desktop {
+    padding-top: 0;
+  }
+}
+
+.footer__content-container {
+  @include desktop {
+    display: flex;
+  }
 }
 
 .footer-titles {
@@ -116,6 +143,12 @@ footer {
 
 .footer__content-container {
   padding: 1.4rem 1.5rem 0;
+  @include desktop {
+    padding: 0 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .footer__social-list {
   display: flex;
@@ -124,15 +157,42 @@ footer {
   padding-bottom: 2rem;
   li {
     padding: 0 1rem;
+    @include desktop {
+      padding: 0 0.5rem;
+    }
   }
   i {
     font-size: 1.2rem;
     color: #fff;
+  }
+  @include desktop {
+    position: absolute;
+    right: 0;
   }
 }
 
 .footer__copyright-container {
   padding: 1rem;
   border-top: solid 1px #393939;
+  @include desktop {
+    // width: 90%;
+    display: flex;
+    margin: 0 5%;
+    position: relative;
+    justify-content: center;
+  }
+}
+
+.mobile {
+  @include desktop {
+    display: none;
+  }
+}
+
+.desktop {
+  display: none;
+  @include desktop {
+    display: flex;
+  }
 }
 </style>

@@ -5,7 +5,7 @@
       <span class="bold">saiba mais</span>
     </h2>
     <div class="blog__carousel-container">
-      <carousel :paginationEnabled="paginationEnabled" perPage="1">
+      <carousel :paginationEnabled="paginationEnabled" :perPage="+isMobile">
         <slide v-for="(card,index) in blogCardsList" :key="index">
           <app-blog-card :blogCardData="card"></app-blog-card>
         </slide>
@@ -21,6 +21,7 @@ import BlogCard from "./BlogCard.vue";
 export default {
   data() {
     return {
+      windowSize: 0,
       paginationEnabled: false,
       blogCardsList: [
         {
@@ -46,10 +47,21 @@ export default {
       ]
     };
   },
+  computed: {
+    isMobile() {
+      if (this.windowSize < 1200) {
+        return "1";
+      }
+      return "3";
+    }
+  },
   components: {
     Carousel,
     Slide,
     appBlogCard: BlogCard
+  },
+  beforeMount() {
+    this.windowSize = window.innerWidth;
   }
 };
 </script>
