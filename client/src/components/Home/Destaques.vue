@@ -11,10 +11,10 @@
       <carousel :paginationEnabled="paginationEnabled" :perPage="1">
         <slide v-for="(card, index) in cards" :key="index">
           <app-destaques-card
-            :title="card.title"
-            :publishDate="card.publishDate"
+            :title="card.name"
+            :publishDate="card.createdAt"
             :price="card.price"
-            :imageUrl="card.imageUrl"
+            :imageUrl="card.imagesUrl"
           ></app-destaques-card>
         </slide>
       </carousel>
@@ -31,44 +31,34 @@ export default {
   data() {
     return {
       paginationEnabled: false,
-      cards: [
-        {
-          title: "Title Title Title Title Title Title",
-          publishDate: "20/20/2020",
-          price: "32.900",
-          imageUrl: "https://keywordimg.com/400x260/car"
-        },
-        {
-          title: "Title",
-          publishDate: "20/20/2020",
-          price: "32.900",
-          imageUrl: "https://keywordimg.com/400x260/nicecar"
-        },
-        {
-          title: "Title",
-          publishDate: "20/20/2020",
-          price: "32.900",
-          imageUrl: "https://keywordimg.com/400x260/bigcar"
-        },
-        {
-          title: "Title",
-          publishDate: "20/20/2020",
-          price: "32.900",
-          imageUrl: "https://keywordimg.com/400x260/ok"
-        },
-        {
-          title: "Title",
-          publishDate: "20/20/2020",
-          price: "32.900",
-          imageUrl: "https://keywordimg.com/400x260/funnything"
-        }
-      ]
+      cards: []
     };
+  },
+  computed: {
+    thereIsProduct() {
+      return this.$store.state.products;
+    }
+  },
+  watch: {
+    thereIsProduct(newState) {
+      this.cards = newState;
+      console.log(newState);
+    }
   },
   components: {
     Carousel,
     Slide,
     appDestaquesCard: DestaquesCard
+  },
+  beforeCreate() {
+    this.$store
+      .dispatch("getProducts")
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 };
 </script>

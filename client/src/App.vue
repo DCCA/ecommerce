@@ -45,7 +45,7 @@ h2 {
   grid-template-columns: repeat(3, 1fr);
   @include desktop {
     grid-template-columns: repeat(12, 1fr);
-    gap: 1.5rem;
+    gap: 1.5rem 0;
     overflow: hidden;
   }
 }

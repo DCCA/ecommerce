@@ -59,7 +59,7 @@ header {
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
   opacity: 1;
-  background-color: grey;
+  background-color: #222222;
   padding: 1rem 0;
   z-index: 2;
   h2 {
