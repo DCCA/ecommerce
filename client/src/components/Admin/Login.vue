@@ -2,7 +2,7 @@
   <div>
     <h1>Login</h1>
     <form class="pa4 black-80">
-      <div class="measure">
+      <div class="measure center">
         <label for="email" class="f6 b db mb2">E-mail</label>
         <input
           id="email"
@@ -12,7 +12,7 @@
           v-model="email"
         />
       </div>
-      <div class="measure">
+      <div class="measure center">
         <label for="password" class="f6 b db mb2">Password</label>
         <input
           id="password"

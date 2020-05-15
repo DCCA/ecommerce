@@ -59,7 +59,7 @@ header {
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
   opacity: 1;
-  background-color: grey;
+  background-color: #222222;
   padding: 1rem 0;
   z-index: 2;
   h2 {
@@ -70,7 +70,7 @@ header {
     gap: 1.5rem;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr;
-    padding: 3rem 2rem;
+    padding: 2rem 2rem;
   }
 }
 

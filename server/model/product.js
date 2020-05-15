@@ -7,7 +7,7 @@ const productSchema = new Schema(
 			type: String,
 			required: true,
 		},
-		imagesurl: {
+		imagesUrl: {
 			type: String,
 			required: true,
 		},
@@ -15,8 +15,46 @@ const productSchema = new Schema(
 			type: Number,
 			required: true,
 		},
+		description: {
+			type: String,
+			required: true,
+		},
+		quadro: {
+			type: String,
+		},
+		engrenagens: {
+			type: String,
+		},
+		aro: {
+			type: String,
+		},
+		guidao: {
+			type: String,
+		},
+		pneu: {
+			type: String,
+		},
+		haste: {
+			type: String,
+		},
+		pedaleira: {
+			type: String,
+		},
+		freios: {
+			type: String,
+		},
+		corrente: {
+			type: String,
+		},
+		creator: {
+			type: Schema.Types.ObjectId,
+			ref: 'User',
+			required: true,
+		},
 	},
 	{
-		timestamps,
+		timestamps: true,
 	}
 );
+
+module.exports = mongoose.model('Product', productSchema);

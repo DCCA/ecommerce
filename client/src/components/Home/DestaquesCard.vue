@@ -4,7 +4,7 @@
       <img class="card__images" :src="imageUrl" alt />
     </div>
     <div class="card__details">
-      <h3 class="title">{{ title }}</h3>
+      <h3 class="product-title">{{ title }}</h3>
       <div>
         <p class="pub-date">Publicado: {{ publishDate }}</p>
         <p class="price">R$ {{ price }}</p>
@@ -17,7 +17,7 @@
         >Bacon ipsum dolor amet meatball filet mignon boudin corned beef chislic venison. Pork loin short loin shankle sirloin frankfurter jowl bresaola.</p>
         <router-link to="/" class="link-see-more">+ VER DESCRIÇÃO COMPLETA</router-link>
       </div>
-      <button class="btn-line">Comprar</button>
+      <router-link class="btn-line" tag="button" :to="'/product/' + id">Comprar</router-link>
     </div>
   </div>
 </template>
@@ -34,10 +34,14 @@ export default {
       required: true
     },
     price: {
-      type: String,
+      type: Number,
       required: true
     },
     imageUrl: {
+      type: String,
+      required: true
+    },
+    id: {
       type: String,
       required: true
     }
@@ -81,9 +85,10 @@ export default {
     flex-direction: column;
     justify-content: space-between;
   }
-  h3 {
+  .product-title {
     font-size: 1rem;
     color: #414150;
+    line-height: normal;
     @include desktop {
       font-size: 1.8rem;
     }
