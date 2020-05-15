@@ -28,10 +28,11 @@ export default {};
     font-size: 1rem;
     @include desktop {
       font-size: 1.2rem;
+      text-align: center;
     }
   }
   @include desktop {
-    margin: 0 5% -5%;
+    margin: 0 5% -3rem;
     border-radius: 0.5rem;
     z-index: 1;
   }
@@ -46,6 +47,7 @@ h2 {
   letter-spacing: normal;
   @include desktop {
     font-size: 1.6rem;
+    text-align: center;
   }
 }
 

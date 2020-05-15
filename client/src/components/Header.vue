@@ -70,7 +70,7 @@ header {
     gap: 1.5rem;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr;
-    padding: 3rem 2rem;
+    padding: 2rem 2rem;
   }
 }
 

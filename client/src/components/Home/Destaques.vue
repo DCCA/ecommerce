@@ -1,6 +1,6 @@
 <template>
   <div class="destaques__container">
-    <div class="destques__title-container">
+    <div class="destaques__title-container">
       <h2>
         ultimos
         <span class="bold">destaques</span>
@@ -73,7 +73,7 @@ export default {
   }
 }
 
-.destques__title-container {
+.destaques__title-container {
   @include desktop {
     grid-column: 1 /2;
     grid-row: 1 /3;

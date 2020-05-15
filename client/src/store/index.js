@@ -8,6 +8,7 @@ export default new Vuex.Store({
 		idToken: null,
 		userId: null,
 		products: [],
+		product: [],
 	},
 	mutations: {
 		authUser(state, userData) {
@@ -20,6 +21,9 @@ export default new Vuex.Store({
 		},
 		setProducts(state, productsData) {
 			state.products = productsData.products;
+		},
+		setProduct(state, productData) {
+			state.product = productData.product;
 		},
 	},
 	actions: {
@@ -86,6 +90,21 @@ export default new Vuex.Store({
 					console.log(data);
 					context.commit('setProducts', {
 						products: data.products,
+					});
+				})
+				.catch((err) => {
+					console.log(err);
+				});
+		},
+		getProduct(context, id) {
+			fetch(`http://localhost:3000/api/shop/product/${id}`)
+				.then((res) => {
+					return res.json();
+				})
+				.then((data) => {
+					console.log(data);
+					context.commit('setProduct', {
+						product: data.product,
 					});
 				})
 				.catch((err) => {
