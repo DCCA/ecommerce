@@ -1,6 +1,10 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
+const apiUrl = 'https://ecommerce-mevn.herokuapp.com';
+// Dev
+// http://localhost:3000
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -32,7 +36,7 @@ export default new Vuex.Store({
 			const email = authData.email;
 			const password = authData.password;
 			// Add the fetch code
-			fetch('http://localhost:3000/api/auth/signup', {
+			fetch(`${apiUrl}/api/auth/signup`, {
 				method: 'PUT',
 				body: JSON.stringify({
 					name: name,
@@ -53,7 +57,7 @@ export default new Vuex.Store({
 		login(context, authData) {
 			const email = authData.email;
 			const password = authData.password;
-			fetch('http://localhost:3000/api/auth/login', {
+			fetch(`${apiUrl}/api/auth/login`, {
 				method: 'POST',
 				body: JSON.stringify({
 					name: name,
@@ -82,7 +86,7 @@ export default new Vuex.Store({
 			context.commit('logOutUser');
 		},
 		getProducts(context) {
-			fetch('http://localhost:3000/api/shop/products')
+			fetch(`${apiUrl}/api/shop/products`)
 				.then((res) => {
 					return res.json();
 				})
@@ -97,7 +101,7 @@ export default new Vuex.Store({
 				});
 		},
 		getProduct(context, id) {
-			fetch(`http://localhost:3000/api/shop/product/${id}`)
+			fetch(`${apiUrl}/api/shop/product/${id}`)
 				.then((res) => {
 					return res.json();
 				})
