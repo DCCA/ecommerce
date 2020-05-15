@@ -10,4 +10,5 @@ Design by [Eric Favalli](https://www.linkedin.com/in/erich-favalli/)
 
 Single Page
 [] - Add error handling when the id passed does not correspond to a real product
-[] - Tranforma the specs area into a for loop (model the specs data in DB to serve an array)
+[] - Transform the specs area into a for loop (model the specs data in DB to serve an array)
+[] - Break the Single Product into components

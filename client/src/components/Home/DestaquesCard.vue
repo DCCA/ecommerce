@@ -17,7 +17,7 @@
         >Bacon ipsum dolor amet meatball filet mignon boudin corned beef chislic venison. Pork loin short loin shankle sirloin frankfurter jowl bresaola.</p>
         <router-link to="/" class="link-see-more">+ VER DESCRIÇÃO COMPLETA</router-link>
       </div>
-      <button class="btn-line">Comprar</button>
+      <router-link class="btn-line" tag="button" :to="'/product/' + id">Comprar</router-link>
     </div>
   </div>
 </template>
@@ -38,6 +38,10 @@ export default {
       required: true
     },
     imageUrl: {
+      type: String,
+      required: true
+    },
+    id: {
       type: String,
       required: true
     }

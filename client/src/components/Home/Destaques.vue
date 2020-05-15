@@ -15,6 +15,7 @@
             :publishDate="card.createdAt"
             :price="card.price"
             :imageUrl="card.imagesUrl"
+            :id="card._id"
           ></app-destaques-card>
         </slide>
       </carousel>
@@ -42,7 +43,6 @@ export default {
   watch: {
     thereIsProduct(newState) {
       this.cards = newState;
-      console.log(newState);
     }
   },
   components: {
